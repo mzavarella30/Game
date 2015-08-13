@@ -1,11 +1,15 @@
-package com.michael;
+/**
+ * Created by Michael Zavarella
+ */
+package com.Zav;
+
+import com.Zav.Screen.Screen;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.awt.image.Raster;
 
 public class Game extends Canvas implements Runnable
 {
@@ -22,12 +26,15 @@ public class Game extends Canvas implements Runnable
     private JFrame frame;
     private boolean running = false;
 
+    private Screen screen;
+
     // Game constructor
     // All of this code runs whenever a new Game is created!
     public Game() {
         Dimension size = new Dimension(width*scale, height*scale);
         setPreferredSize(size);
 
+        screen = new Screen(width, height);
         frame = new JFrame();
     }
 
