@@ -1,6 +1,6 @@
 Game made by Michael Zavarella
 Learning a lot more Java
 
-Will commit after every 5 videos
+After video 5 I will commit after every video!
 
 Hope this helps!

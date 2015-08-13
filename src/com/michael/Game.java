@@ -57,6 +57,16 @@ public class Game extends Canvas implements Runnable
             createBufferStrategy(3);
             return;
         }
+
+        Graphics g = bs.getDrawGraphics();
+        {
+            g.setColor(Color.black); // g.setColor(new Color(80, 40, 100));
+            g.fillRect(0, 0, getWidth(), getHeight());
+
+        }
+        g.dispose();
+        bs.show();
+
     }
 
     // Entry point of the program. Genesis. Inception. Life!
