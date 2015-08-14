@@ -5,12 +5,12 @@ package com.Zav.Game.Graphics;
 
 public class Sprite
 {
-    private final int SIZE;
+    public final int SIZE;
     private int x, y;
     public int[] pixels;
     private SpriteSheet sheet;
 
-    public static Sprite grass = new Sprite(16, 0, 0, null);                                                            // This will actually create the sprite
+    public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles);                                                            // This will actually create the sprite
 
     public Sprite(int size, int x, int y, SpriteSheet sheet)
     {
