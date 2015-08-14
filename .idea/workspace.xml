@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebeff534-88b2-44dc-baa9-8a3a776cc2bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Game/com/Zav/Game/Input/Keyboard.class" afterPath="$PROJECT_DIR$/out/production/Game/com/Zav/Game/Input/Keyboard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Game/com/Zav/Game/Graphics/Screen.class" afterPath="$PROJECT_DIR$/out/production/Game/com/Zav/Game/Graphics/Screen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/textures/spriteSheet.png" afterPath="$PROJECT_DIR$/res/textures/spriteSheet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game.iml" afterPath="$PROJECT_DIR$/Game.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Zav/Game/Graphics/Screen.java" afterPath="$PROJECT_DIR$/src/com/Zav/Game/Graphics/Screen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Zav/Game/Graphics/Sprite.java" afterPath="$PROJECT_DIR$/src/com/Zav/Game/Graphics/Sprite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Zav/Game/Graphics/SpriteSheet.java" afterPath="$PROJECT_DIR$/src/com/Zav/Game/Graphics/SpriteSheet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Game.iws" />
@@ -76,7 +68,7 @@
       <file leaf-file-name="SpriteSheet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Graphics/SpriteSheet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13036303">
+            <state vertical-scroll-proportion="0.44884488">
               <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -173,7 +165,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,8 +272,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -614,6 +606,59 @@
     <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Graphics/SpriteSheet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Graphics/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="9" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Graphics/Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="95" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Input/Keyboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Graphics/SpriteSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -843,13 +888,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.122112215">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Graphics/SpriteSheet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13036303">
+        <state vertical-scroll-proportion="0.44884488">
           <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
