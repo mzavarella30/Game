@@ -30,7 +30,8 @@ public class Game extends Canvas implements Runnable
 
     // Game constructor
     // All of this code runs whenever a new Game is created!
-    public Game() {
+    public Game()
+    {
         Dimension size = new Dimension(width*scale, height*scale);
         setPreferredSize(size);
 
@@ -38,7 +39,8 @@ public class Game extends Canvas implements Runnable
         frame = new JFrame();
     }
 
-    public synchronized void start() {
+    public synchronized void start()
+    {
         running = true;
         thread = new Thread(this, "Display");
         thread.start();
@@ -47,10 +49,12 @@ public class Game extends Canvas implements Runnable
     public synchronized void stop()
     {
         running = false;
-        try {
+        try
+        {
             thread.join();
         }
-        catch (InterruptedException e) {
+        catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -64,17 +68,27 @@ public class Game extends Canvas implements Runnable
 
     public void update() {}
 
-    public void render() {
+    public void render()
+    {
         BufferStrategy bs = getBufferStrategy();
-        if (bs == null) {
+        if (bs == null)
+        {
             createBufferStrategy(3);
             return;
+        }
+
+        screen.render();
+
+        for(int i = 0; i < pixels.length; i++)
+        {
+            pixels[i] = screen.pixels[i];
         }
 
         Graphics g = bs.getDrawGraphics();
         {
             g.setColor(Color.black); // g.setColor(new Color(80, 40, 100));
             g.fillRect(0, 0, getWidth(), getHeight());
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
         }
         g.dispose();
@@ -83,7 +97,8 @@ public class Game extends Canvas implements Runnable
     }
 
     // Entry point of the program. Genesis. Inception. Life!
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Game game = new Game();
         game.frame.setResizable(false);                                                                                 // Having a resizable window creates a ton of problems
         game.frame.setTitle("Game");
