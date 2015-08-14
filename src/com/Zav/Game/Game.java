@@ -1,9 +1,10 @@
 /**
  * Created by Michael Zavarella
  */
-package com.Zav;
+package com.Zav.Game;
 
-import com.Zav.Graphics.Screen;
+import com.Zav.Game.Graphics.Screen;
+import com.Zav.Game.Input.Keyboard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +29,7 @@ public class Game extends Canvas implements Runnable
 
     private Thread thread;
     private JFrame frame;
+    private Keyboard key;
     private boolean running = false;
 
     private Screen screen;
@@ -41,6 +43,9 @@ public class Game extends Canvas implements Runnable
 
         screen = new Screen(width, height);
         frame = new JFrame();
+
+        key = new Keyboard();
+        addKeyListener(key);
     }
 
     public synchronized void start()
@@ -95,6 +100,7 @@ public class Game extends Canvas implements Runnable
     }
 
     public void update() {
+        key.update();
         x++;
         y++;
     }

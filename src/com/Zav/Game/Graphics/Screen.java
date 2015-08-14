@@ -1,7 +1,7 @@
 /**
  * Created by Michael Zavarella
  */
-package com.Zav.Graphics;
+package com.Zav.Game.Graphics;
 
 import java.util.Random;
 
