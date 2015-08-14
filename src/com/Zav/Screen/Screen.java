@@ -4,20 +4,27 @@
 package com.Zav.Screen;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Screen
 {
     private int width, height;
     public int[] pixels;
 
-    int xTime = 50, yTime = 50;
-    int counter = 0;
+    public int[] tiles = new int[64 * 64];
+
+    private Random random = new Random();
 
     public Screen (int width, int height)
     {
         this.width = width;
         this.height = height;
-        pixels = new int[width * height]; //50,400 elements in the pixels array
+        pixels = new int[width * height]; //(0, 53999) | 50,400 elements in the pixels array
+
+        for (int i = 0; i < tiles.length; i++)
+        {
+            tiles[i] = random.nextInt(0xffffff);
+        }
     }
 
     public void clear()
@@ -30,17 +37,14 @@ public class Screen
 
     public void render()
     {
-        counter++;
-        if (counter % 20 == 0) xTime++;
-        if (counter % 20 == 0) yTime++;
-
         for (int y = 0; y < height; y++)
         {
-            if (yTime < 0 || yTime >= height) break;
+            if (y < 0 || y >= height) break;
             for (int x = 0; x < width; x++)
             {
-                if (xTime < 0 || xTime >= width) break;
-                pixels[xTime + yTime * width] = 0xff00ff;
+                if (x < 0 || x >= width) break;
+                int tileIndex = (x >> 4) + (y >> 4) * 64;
+                pixels[x + y * width] = tiles[tileIndex];
             }
         }
     }
