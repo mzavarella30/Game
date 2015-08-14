@@ -10,6 +10,8 @@ public class Sprite
     public int[] pixels;
     private SpriteSheet sheet;
 
+    public static Sprite grass = new Sprite(16, 0, 0, null);                                                            // This will actually create the sprite
+
     public Sprite(int size, int x, int y, SpriteSheet sheet)
     {
         SIZE = size;
