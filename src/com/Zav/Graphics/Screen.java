@@ -1,9 +1,8 @@
 /**
  * Created by Michael Zavarella
  */
-package com.Zav.Screen;
+package com.Zav.Graphics;
 
-import java.awt.*;
 import java.util.Random;
 
 public class Screen
@@ -11,7 +10,9 @@ public class Screen
     private int width, height;
     public int[] pixels;
 
-    public int[] tiles = new int[64 * 64];
+    public final int MAP_SIZE = 64;  // x pixels^2 | If you want to make the tiles bigger or smaller, change this!
+    public final int MAP_SIZE_MASK = MAP_SIZE - 1;
+    public int[] tiles = new int[MAP_SIZE * MAP_SIZE];
 
     private Random random = new Random();
 
@@ -24,26 +25,29 @@ public class Screen
         for (int i = 0; i < tiles.length; i++)
         {
             tiles[i] = random.nextInt(0xffffff);
+            tiles[0] = 0;
         }
     }
 
     public void clear()
     {
-        for (int i = 0; i < pixels.length; i++)
+        for (int i = 0; i < MAP_SIZE * MAP_SIZE; i++)
         {
             pixels[i] = 0;
         }
     }
 
-    public void render()
+    public void render(int xOff, int yOff)
     {
         for (int y = 0; y < height; y++)
         {
-            if (y < 0 || y >= height) break;
+            int yy = y+yOff;
+//            if (yy < 0 || yy >= height) break;
             for (int x = 0; x < width; x++)
             {
-                if (x < 0 || x >= width) break;
-                int tileIndex = (x >> 4) + (y >> 4) * 64;
+                int xx = x+xOff;
+//                if (xx < 0 || xx >= width) break;
+                int tileIndex = ((xx >> 4) % MAP_SIZE_MASK) + ((yy >> 4) % MAP_SIZE_MASK) * MAP_SIZE;
                 pixels[x + y * width] = tiles[tileIndex];
             }
         }

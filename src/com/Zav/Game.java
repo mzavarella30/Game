@@ -3,7 +3,7 @@
  */
 package com.Zav;
 
-import com.Zav.Screen.Screen;
+import com.Zav.Graphics.Screen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +21,8 @@ public class Game extends Canvas implements Runnable
 
     private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);                         // Creates an image with a buffer
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();                               // Converting the image object into an array of integers
+
+    public int x = 0, y = 0;
 
     public static String title = "Game";
 
@@ -92,7 +94,10 @@ public class Game extends Canvas implements Runnable
         }
     }
 
-    public void update() {}
+    public void update() {
+        x++;
+        // y++;
+    }
 
     public void render()
     {
@@ -104,7 +109,7 @@ public class Game extends Canvas implements Runnable
         }
 
         screen.clear();
-        screen.render();
+        screen.render(x, y);
 
         for(int i = 0; i < pixels.length; i++)
         {
