@@ -42,12 +42,12 @@ public class Screen
         for (int y = 0; y < height; y++)
         {
             int yy = y+yOff;
-//            if (yy < 0 || yy >= height) break;
+            //if (yy < 0 || yy >= height) break;
             for (int x = 0; x < width; x++)
             {
                 int xx = x+xOff;
-//                if (xx < 0 || xx >= width) break;
-                int tileIndex = ((xx >> 4) % MAP_SIZE_MASK) + ((yy >> 4) % MAP_SIZE_MASK) * MAP_SIZE;
+                int tileIndex = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE;
+                //if (xx < 0 || xx >= width) break;
                 pixels[x + y * width] = tiles[tileIndex];
             }
         }
