@@ -6,13 +6,12 @@ package com.Zav.Game.Graphics;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.lang.management.BufferPoolMXBean;
 
 public class SpriteSheet
 {
 
     private String path;
-    private final int SIZE;
+    public final int SIZE;
     public int[] pixels;
 
     public SpriteSheet(String path, int size)
