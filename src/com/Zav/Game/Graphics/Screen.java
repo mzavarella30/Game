@@ -3,6 +3,8 @@
  */
 package com.Zav.Game.Graphics;
 
+import com.Zav.Game.Level.Tile.Tile;
+
 import java.util.Random;
 
 public class Screen
@@ -50,4 +52,22 @@ public class Screen
             }
         }
     }
+
+    public void renderTile(int xp, int yp, Tile tile)
+    {
+        int sSize = tile.sprite.SIZE;
+        for(int y = 0; y < sSize; y++)
+        {
+            int ya = y + yp;
+            for(int x = 0; x < sSize; x++)
+            {
+                int xa = x + xp;
+                if (xa < 0 || xa >= width || ya < 0 || ya >= width) break;                                              // Stop rendering tiles that aren't on the screen
+                pixels[xa+ya*width] = tile.sprite.pixels[x+y+sSize];
+            }
+        }
+    }
+
+
+
 }
