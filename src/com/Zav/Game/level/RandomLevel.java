@@ -1,6 +1,5 @@
 package com.Zav.Game.Level;
 
-import com.Zav.Game.Level.Level;
 import java.util.Random;
 
 public class RandomLevel extends Level
