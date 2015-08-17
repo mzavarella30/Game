@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebeff534-88b2-44dc-baa9-8a3a776cc2bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/Tile.java" afterPath="$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/Tile.java" />
-    </list>
+    <list default="true" id="ebeff534-88b2-44dc-baa9-8a3a776cc2bb" name="Default" comment="" />
     <ignored path="Game.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -100,25 +98,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2959739">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrassTile.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GrassTile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/GrassTile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#183#184#0" expanded="true" />
-                <element signature="e#212#213#0" expanded="true" />
+                <element signature="e#223#224#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/com/Zav/Game/level/Random.java" />
         <option value="$PROJECT_DIR$/src/com/Zav/Game/level/RandomLevel.java" />
         <option value="$PROJECT_DIR$/src/com/Zav/Game/Level/RandomLevel.java" />
-        <option value="$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/GrassTile.java" />
         <option value="$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/Tile.java" />
+        <option value="$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/GrassTile.java" />
       </list>
     </option>
   </component>
@@ -776,23 +774,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/GrassTile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
-          </folding>
+          <caret line="2" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/Tile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/Zav/Game/Level/Tile/GrassTile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2959739">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
