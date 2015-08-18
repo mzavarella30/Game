@@ -43,15 +43,17 @@ public class Screen
     {
         xp -= xOffset;
         yp -= yOffset;
-        int sSize = tile.sprite.SIZE;
-        for(int y = 0; y < sSize; y++)
+        int tileSpriteSize = tile.sprite.SIZE;
+        for(int y = 0; y < tileSpriteSize; y++)
         {
             int ya = y + yp;
-            for(int x = 0; x < sSize; x++)
+            for(int x = 0; x < tileSpriteSize; x++)
             {
                 int xa = x + xp;
-                if (xa < 0 || xa >= width || ya < 0 || ya >= height) break;                                              // Stop rendering tiles that aren't on the screen
-                pixels[xa + ya * width] = tile.sprite.pixels[x+y+sSize];
+                if (xa < -tileSpriteSize || xa >= width || ya < -tileSpriteSize || ya >= height) break;
+                if (xa < 0) xa = 0;
+                if (ya < 0) ya = 0;
+                pixels[xa + ya * width] = tile.sprite.pixels[x+y+tileSpriteSize];
             }
         }
     }
