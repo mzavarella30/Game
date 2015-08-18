@@ -14,11 +14,9 @@ public class Player extends Mob {
 
     @Override
     public void update() {
-
     }
 
     @Override
     public void render() {
-
     }
 }
