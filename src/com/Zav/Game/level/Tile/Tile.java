@@ -12,6 +12,7 @@ public class Tile
     public Sprite sprite;
 
     public static Tile grass = new GrassTile(Sprite.grass);
+    public static Tile voidTile = new VoidTile(Sprite.voidSprite);
 
     public Tile(Sprite sprite)
     {
