@@ -3,6 +3,7 @@
  */
 package com.Zav.Game;
 
+import com.Zav.Game.Entity.Mob.Player;
 import com.Zav.Game.Graphics.Screen;
 import com.Zav.Game.Input.Keyboard;
 import com.Zav.Game.Level.Level;
@@ -24,14 +25,13 @@ public class Game extends Canvas implements Runnable {
     private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);                         // Creates an image with a buffer
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();                               // Converting the image object into an array of integers
 
-    public int x = 0, y = 0;
-
     public static String title = "Game";
 
     private Thread thread;
     private JFrame frame;
     private Keyboard key;
     private Level level;
+    private Player player;
     private boolean running = false;
 
     private Screen screen;
@@ -44,9 +44,10 @@ public class Game extends Canvas implements Runnable {
 
         screen = new Screen(width, height);
         frame = new JFrame();
-
         key = new Keyboard();
-        level = new RandomLevel(64, 64);
+        level = new RandomLevel(640, 640);
+        player = new Player(key);
+
         addKeyListener(key);
     }
 
@@ -96,10 +97,7 @@ public class Game extends Canvas implements Runnable {
 
     public void update() {
         key.update();
-        if (key.up) y--;
-        if (key.down) y++;
-        if (key.left) x--;
-        if (key.right) x++;
+        player.update();
     }
 
     public void render() {
@@ -110,7 +108,7 @@ public class Game extends Canvas implements Runnable {
         }
 
         screen.clear();
-        level.render(x, y, screen);
+        level.render(player.x, player.y, screen);
 
         for (int i = 0; i < pixels.length; i++) {
             pixels[i] = screen.pixels[i];
@@ -121,7 +119,6 @@ public class Game extends Canvas implements Runnable {
             g.setColor(Color.black); // g.setColor(new Color(80, 40, 100));
             g.fillRect(0, 0, getWidth(), getHeight());
             g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
-
         }
         g.dispose();
         bs.show();

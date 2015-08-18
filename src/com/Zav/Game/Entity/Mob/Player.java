@@ -3,17 +3,28 @@
  */
 package com.Zav.Game.Entity.Mob;
 
+import com.Zav.Game.Input.Keyboard;
+
 public class Player extends Mob {
-    Player() {
+
+    private Keyboard input;
+
+    public Player(Keyboard input) {
+        this.input = input;
     }
 
-    Player(int x, int y) {
+    public Player(Keyboard input, int x, int y) {
+        this.input = input;
         this.x = x;
         this.y = y;
     }
 
     @Override
     public void update() {
+        if (input.up) y--;
+        if (input.down) y++;
+        if (input.left) x--;
+        if (input.right) x++;
     }
 
     @Override
