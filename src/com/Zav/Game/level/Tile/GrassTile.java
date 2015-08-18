@@ -15,6 +15,6 @@ public class GrassTile extends Tile
     @Override
     public void render(int x, int y, Screen screen)
     {
-        // Render stuff
+        screen.renderTile(x, y, this);
     }
 }

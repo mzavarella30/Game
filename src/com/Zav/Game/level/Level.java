@@ -25,9 +25,10 @@ public class Level
 
     private void loadLevel(String path){}
 
-    public void time(){}
 
     public void update(){}
+
+    public void time(){}
 
     public void render(int xScroll, int yScroll, Screen screen){}
 }
