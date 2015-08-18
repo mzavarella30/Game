@@ -7,3 +7,6 @@ Hope this helps!
 
 Video 12 Update
 - This is fun as hell
+
+Video 30 something update
+- My commits have been so scattered but I really don't care
