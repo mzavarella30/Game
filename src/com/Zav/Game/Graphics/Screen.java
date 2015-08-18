@@ -15,6 +15,7 @@ public class Screen
     public final int MAP_SIZE = 64;                                                                                     // x pixels^2 | If you want to make the tiles bigger or smaller, change this!
     public int[] tiles = new int[MAP_SIZE * MAP_SIZE];
 
+    public int xOffset, yOffset;
 
     public Screen (int width, int height)
     {
@@ -55,6 +56,8 @@ public class Screen
 
     public void renderTile(int xp, int yp, Tile tile)
     {
+        xp -= xOffset;
+        yp -= yOffset;
         int sSize = tile.sprite.SIZE;
         for(int y = 0; y < sSize; y++)
         {
@@ -63,11 +66,14 @@ public class Screen
             {
                 int xa = x + xp;
                 if (xa < 0 || xa >= width || ya < 0 || ya >= height) break;                                              // Stop rendering tiles that aren't on the screen
-                pixels[xa+ya*width] = tile.sprite.pixels[x+y+sSize];
+                pixels[xa + ya * width] = tile.sprite.pixels[x+y+sSize];
             }
         }
     }
 
-
-
+    public void setOffset(int xOffset, int yOffset)
+    {
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
+    }
 }
