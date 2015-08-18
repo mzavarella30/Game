@@ -5,7 +5,6 @@ package com.Zav.Game.Level;
 
 import com.Zav.Game.Graphics.Screen;
 import com.Zav.Game.Level.Tile.Tile;
-import com.sun.corba.se.impl.orb.ParserTable;
 
 public class Level
 {
@@ -34,6 +33,7 @@ public class Level
 
     public void render(int xScroll, int yScroll, Screen screen)
     {
+        screen.setOffset(xScroll, yScroll);
         // Setting up the corner pins of the screen! This defines the render region of our screen
         int x0 = xScroll >> 4;
         int x1 = (xScroll + screen.width) >> 4;
@@ -44,13 +44,14 @@ public class Level
         {
             for(int x = x0; x < x1; x++)
             {
-                getTile(x, y).render(x, y, screen);
+                getTile(x, y).render(x << 4, y << 4, screen);
             }
         }
     }
 
     public Tile getTile(int x, int y)
     {
+        if (x < 0 || y < 0 || x >= width || y >= height ) return Tile.voidTile;
         if (tiles[x+y*width] == 0) return Tile.grass;
         return Tile.voidTile;
 

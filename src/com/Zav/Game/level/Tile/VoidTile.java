@@ -5,7 +5,7 @@ import com.Zav.Game.Graphics.Sprite;
 
 public class VoidTile extends Tile
 {
-    public VoidTile(Sprite voidSprite) {super();}
+    public VoidTile(Sprite sprite) {super(sprite);}
 
     public void render(int x, int y, Screen screen)
     {

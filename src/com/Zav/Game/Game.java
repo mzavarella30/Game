@@ -5,6 +5,8 @@ package com.Zav.Game;
 
 import com.Zav.Game.Graphics.Screen;
 import com.Zav.Game.Input.Keyboard;
+import com.Zav.Game.Level.Level;
+import com.Zav.Game.Level.RandomLevel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,6 +32,7 @@ public class Game extends Canvas implements Runnable
     private Thread thread;
     private JFrame frame;
     private Keyboard key;
+    private Level level;
     private boolean running = false;
 
     private Screen screen;
@@ -45,6 +48,7 @@ public class Game extends Canvas implements Runnable
         frame = new JFrame();
 
         key = new Keyboard();
+        level = new RandomLevel(64, 64);
         addKeyListener(key);
     }
 
@@ -117,7 +121,7 @@ public class Game extends Canvas implements Runnable
         }
 
         screen.clear();
-        screen.render(x, y);
+        level.render(x, y, screen);
 
         for(int i = 0; i < pixels.length; i++)
         {
@@ -145,6 +149,7 @@ public class Game extends Canvas implements Runnable
         game.frame.add(game);
         game.frame.pack();
         game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                                                      // Closes the window
+        game.requestFocusInWindow();
         game.frame.setLocationRelativeTo(null);                                                                         // Centers the window on the screen
         game.frame.setVisible(true);
 

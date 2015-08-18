@@ -11,7 +11,7 @@ public class Sprite
     private SpriteSheet sheet;
 
     public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles); // This will actually create the sprite
-    public static Sprite voidSprite = new Sprite(16, 0);
+    public static Sprite voidSprite = new Sprite(16, 0x28ADBB);
 
     public Sprite(int size, int x, int y, SpriteSheet sheet)
     {
