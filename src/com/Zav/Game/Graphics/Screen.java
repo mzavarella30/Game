@@ -7,8 +7,7 @@ import com.Zav.Game.Level.Tile.Tile;
 
 import java.util.Random;
 
-public class Screen
-{
+public class Screen {
     public int width, height;
     public int[] pixels;
 
@@ -17,49 +16,41 @@ public class Screen
 
     public int xOffset, yOffset;
 
-    public Screen (int width, int height)
-    {
+    public Screen(int width, int height) {
         Random random = new Random();
         this.width = width;
         this.height = height;
         pixels = new int[width * height];                                                                               //(0, 53999) | 50,400 elements in the pixels array
 
-        for (int i = 0; i < tiles.length; i++)
-        {
+        for (int i = 0; i < tiles.length; i++) {
             tiles[i] = random.nextInt(0xffffff);
             tiles[0] = 0;
         }
     }
 
-    public void clear()
-    {
-        for (int i = 0; i < pixels.length; i++)
-        {
+    public void clear() {
+        for (int i = 0; i < pixels.length; i++) {
             pixels[i] = 0;
         }
     }
 
-    public void renderTile(int xp, int yp, Tile tile)
-    {
+    public void renderTile(int xp, int yp, Tile tile) {
         xp -= xOffset;
         yp -= yOffset;
         int tileSpriteSize = tile.sprite.SIZE;
-        for(int y = 0; y < tileSpriteSize; y++)
-        {
+        for (int y = 0; y < tileSpriteSize; y++) {
             int ya = y + yp;
-            for(int x = 0; x < tileSpriteSize; x++)
-            {
+            for (int x = 0; x < tileSpriteSize; x++) {
                 int xa = x + xp;
                 if (xa < -tileSpriteSize || xa >= width || ya < -tileSpriteSize || ya >= height) break;
                 if (xa < 0) xa = 0;
                 if (ya < 0) ya = 0;
-                pixels[xa + ya * width] = tile.sprite.pixels[x+y+tileSpriteSize];
+                pixels[xa + ya * width] = tile.sprite.pixels[x + y + tileSpriteSize];
             }
         }
     }
 
-    public void setOffset(int xOffset, int yOffset)
-    {
+    public void setOffset(int xOffset, int yOffset) {
         this.xOffset = xOffset;
         this.yOffset = yOffset;
     }
