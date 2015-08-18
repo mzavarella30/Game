@@ -35,7 +35,6 @@ public class Level
         // Setting up the corner pins of the screen! This defines the render region of our screen
         int x0 = xScroll >> 4;
         int x1 = (xScroll + screen.width) >> 4;
-
         int y0 = yScroll >> 4;
         int y1 = (yScroll + screen.height) >> 4;
     }
