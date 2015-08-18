@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Screen
 {
-    private int width, height;
+    public int width, height;
     public int[] pixels;
 
     public final int MAP_SIZE = 64;                                                                                     // x pixels^2 | If you want to make the tiles bigger or smaller, change this!
