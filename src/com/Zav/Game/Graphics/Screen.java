@@ -62,7 +62,7 @@ public class Screen
             for(int x = 0; x < sSize; x++)
             {
                 int xa = x + xp;
-                if (xa < 0 || xa >= width || ya < 0 || ya >= width) break;                                              // Stop rendering tiles that aren't on the screen
+                if (xa < 0 || xa >= width || ya < 0 || ya >= height) break;                                              // Stop rendering tiles that aren't on the screen
                 pixels[xa+ya*width] = tile.sprite.pixels[x+y+sSize];
             }
         }
