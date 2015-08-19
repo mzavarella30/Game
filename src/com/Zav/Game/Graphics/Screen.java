@@ -52,7 +52,7 @@ public class Screen {
     public void renderPlayer(int xp, int yp, Sprite sprite) {
         xp -= xOffset;
         yp -= yOffset;
-        int playerSize = 32;
+        int playerSize = sprite.SIZE;
         for (int y = 0; y < playerSize; y++) {
             int ya = y + yp;
             for (int x = 0; x < playerSize; x++) {
