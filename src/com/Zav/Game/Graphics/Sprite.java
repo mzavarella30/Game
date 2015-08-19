@@ -12,6 +12,11 @@ public class Sprite {
     public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles); // This will actually create the sprite
     public static Sprite voidSprite = new Sprite(16, 0x28ADBB);
 
+    public static Sprite player0 = new Sprite(16, 0, 14, SpriteSheet.tiles);
+    public static Sprite player1 = new Sprite(16, 1, 14, SpriteSheet.tiles);
+    public static Sprite player2 = new Sprite(16, 0, 15, SpriteSheet.tiles);
+    public static Sprite player3 = new Sprite(16, 1, 15, SpriteSheet.tiles);
+
     public Sprite(int size, int x, int y, SpriteSheet sheet) {
         SIZE = size;
         pixels = new int[SIZE * SIZE];

@@ -3,6 +3,7 @@
  */
 package com.Zav.Game.Graphics;
 
+import com.Zav.Game.Entity.Mob.Player;
 import com.Zav.Game.Level.Tile.Tile;
 
 import java.util.Random;
@@ -37,18 +38,31 @@ public class Screen {
     public void renderTile(int xp, int yp, Tile tile) {
         xp -= xOffset;
         yp -= yOffset;
-        int tileSpriteSize = tile.sprite.SIZE;
-        for (int y = 0; y < tileSpriteSize; y++) {
+        for (int y = 0; y < tile.sprite.SIZE; y++) {
             int ya = y + yp;
-            for (int x = 0; x < tileSpriteSize; x++) {
+            for (int x = 0; x < tile.sprite.SIZE; x++) {
                 int xa = x + xp;
-                if (xa < -tileSpriteSize || xa >= width || ya < -tileSpriteSize || ya >= height) break;
+                if (xa < -tile.sprite.SIZE || xa >= width || ya < 0 || ya >= height) break;
                 if (xa < 0) xa = 0;
-                if (ya < 0) ya = 0;
-                pixels[xa + ya * width] = tile.sprite.pixels[x + y + tileSpriteSize];
+                pixels[xa + ya * width] = tile.sprite.pixels[x + y * tile.sprite.SIZE];
             }
         }
     }
+
+    public void renderPlayer(int xp, int yp, Sprite sprite) {
+        xp -= xOffset;
+        yp -= yOffset;
+        for (int y = 0; y < 16; y++) {
+            int ya = y + yp;
+            for (int x = 0; x < 16; x++) {
+                int xa = x + xp;
+                if (xa < -16 || xa >= width || ya < 0 || ya >= height) break;
+                if (xa < 0) xa = 0;
+                pixels[xa + ya * width] = sprite.pixels[x + y * 16];
+            }
+        }
+    }
+
 
     public void setOffset(int xOffset, int yOffset) {
         this.xOffset = xOffset;

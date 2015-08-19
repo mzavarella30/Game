@@ -3,6 +3,8 @@
  */
 package com.Zav.Game.Entity.Mob;
 
+import com.Zav.Game.Graphics.Screen;
+import com.Zav.Game.Graphics.Sprite;
 import com.Zav.Game.Input.Keyboard;
 
 public class Player extends Mob {
@@ -29,7 +31,7 @@ public class Player extends Mob {
         if (xa != 0 || ya != 0) move(xa, ya);
     }
 
-    @Override
-    public void render() {
+    public void render(Screen screen) {
+        screen.renderPlayer(x, y, Sprite.player0);
     }
 }
