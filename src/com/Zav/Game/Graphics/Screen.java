@@ -49,18 +49,23 @@ public class Screen {
         }
     }
 
-    public void renderPlayer(int xp, int yp, Sprite sprite) {
+    public void renderPlayer(int xp, int yp, Sprite sprite, int flip) {
         xp -= xOffset;
         yp -= yOffset;
         int playerSize = sprite.SIZE;
         for (int y = 0; y < playerSize; y++) {
             int ya = y + yp;
+            int ys = y;
+            if (flip == 2 || flip == 3) ys = 31 - y;
+
             for (int x = 0; x < playerSize; x++) {
                 int xa = x + xp;
+                int xs = x;
+                if (flip == 1 || flip == 3) xs = 31 - x;
                 if (xa < -playerSize || xa >= width || ya < 0 || ya >= height) break;
                 if (xa < 0) xa = 0;
-                int col = sprite.pixels[x + y * playerSize];
-                if (col != 0xFFFF00FF) pixels[xa + ya * width] = col;
+                int color = sprite.pixels[xs + ys * playerSize];
+                if (color != 0xFFFF00FF) pixels[xa + ya * width] = color;
             }
         }
     }
