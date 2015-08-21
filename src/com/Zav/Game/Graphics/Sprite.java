@@ -14,17 +14,17 @@ public class Sprite {
     public static Sprite rock = new Sprite(16, 2, 0, SpriteSheet.tiles);
     public static Sprite voidSprite = new Sprite(16, 0x28ADBB);
 
-    public static Sprite player_u_0 = new Sprite(32, 0, 5, SpriteSheet.tiles); // up
-    public static Sprite player_u_1 = new Sprite(32, 0, 6, SpriteSheet.tiles);
-    public static Sprite player_u_2 = new Sprite(32, 0, 7, SpriteSheet.tiles);
+    public static Sprite player_u_0 = new Sprite(32, 2, 5, SpriteSheet.tiles); // up
+    public static Sprite player_u_1 = new Sprite(32, 2, 6, SpriteSheet.tiles);
+    public static Sprite player_u_2 = new Sprite(32, 2, 7, SpriteSheet.tiles);
 
     public static Sprite player_s_0 = new Sprite(32, 1, 5, SpriteSheet.tiles); // side
     public static Sprite player_s_1 = new Sprite(32, 1, 6, SpriteSheet.tiles);
     public static Sprite player_s_2 = new Sprite(32, 1, 7, SpriteSheet.tiles);
 
-    public static Sprite player_d_0 = new Sprite(32, 2, 5, SpriteSheet.tiles); // down
-    public static Sprite player_d_1 = new Sprite(32, 2, 6, SpriteSheet.tiles);
-    public static Sprite player_d_2 = new Sprite(32, 2, 7, SpriteSheet.tiles);
+    public static Sprite player_d_0 = new Sprite(32, 0, 5, SpriteSheet.tiles); // down
+    public static Sprite player_d_1 = new Sprite(32, 0, 6, SpriteSheet.tiles);
+    public static Sprite player_d_2 = new Sprite(32, 0, 7, SpriteSheet.tiles);
 
 
     public Sprite(int size, int x, int y, SpriteSheet sheet) {

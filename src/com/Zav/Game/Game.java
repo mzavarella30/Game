@@ -8,6 +8,7 @@ import com.Zav.Game.Graphics.Screen;
 import com.Zav.Game.Input.Keyboard;
 import com.Zav.Game.Level.Level;
 import com.Zav.Game.Level.RandomLevel;
+import com.Zav.Game.Level.SpawnLevel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,8 +46,8 @@ public class Game extends Canvas implements Runnable {
         screen = new Screen(width, height);
         frame = new JFrame();
         key = new Keyboard();
-        level = new RandomLevel(640, 640);
-        player = new Player(key);
+        level = Level.spawn;
+        player = new Player(key, 30, 30);
 
         addKeyListener(key);
     }
@@ -73,6 +74,8 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         int frames = 0;
         int updates = 0;
+
+        requestFocus();
         while (running) {
             long now = System.nanoTime();
             delta += (now - lastTime) / ns;
@@ -121,7 +124,14 @@ public class Game extends Canvas implements Runnable {
         g.setColor(Color.black); // g.setColor(new Color(80, 40, 100));
         g.fillRect(0, 0, getWidth(), getHeight());
         g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Veranda", 0, 50));
+        g.drawString("x: " + player.x + ", y: " + player.y, 450, 400);
+
+        // release system resources
         g.dispose();
+
+        // make the next screen visible
         bs.show();
 
     }
@@ -129,16 +139,15 @@ public class Game extends Canvas implements Runnable {
     // Entry point of the program. Genesis. Inception. Life!
     public static void main(String[] args) {
         Game game = new Game();
-        game.frame.setResizable(false);                                                                                 // Having a resizable window creates a ton of problems
+        game.frame.setResizable(false);
         game.frame.setTitle("Game");
         game.frame.add(game);
         game.frame.pack();
-        game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                                                      // Closes the window
-        game.requestFocusInWindow();
-        game.frame.setLocationRelativeTo(null);                                                                         // Centers the window on the screen
+        game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        game.frame.setLocationRelativeTo(null);
         game.frame.setVisible(true);
 
-        game.start();                                                                                                   // Starts the game
+        game.start();
     }
 
 }

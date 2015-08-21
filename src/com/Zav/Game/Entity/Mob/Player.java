@@ -16,13 +16,13 @@ public class Player extends Mob {
 
     public Player(Keyboard input) {
         this.input = input;
-        sprite = Sprite.player_u_0;
+        sprite = Sprite.player_d_0;
     }
 
-    public Player(Keyboard input, int x, int y) {
+    public Player(Keyboard input, int startX, int startY) {
         this.input = input;
-        this.x = x;
-        this.y = y;
+        this.x = startX;
+        this.y = startY;
     }
 
     @Override

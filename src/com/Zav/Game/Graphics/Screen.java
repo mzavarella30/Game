@@ -12,7 +12,7 @@ public class Screen {
     public int width, height;
     public int[] pixels;
 
-    public final int MAP_SIZE = 64;                                                                                     // x pixels^2 | If you want to make the tiles bigger or smaller, change this!
+    public final int MAP_SIZE = 64;
     public int[] tiles = new int[MAP_SIZE * MAP_SIZE];
 
     public int xOffset, yOffset;
@@ -21,7 +21,7 @@ public class Screen {
         Random random = new Random();
         this.width = width;
         this.height = height;
-        pixels = new int[width * height];                                                                               //(0, 53999) | 50,400 elements in the pixels array
+        pixels = new int[width * height];
 
         for (int i = 0; i < tiles.length; i++) {
             tiles[i] = random.nextInt(0xffffff);
