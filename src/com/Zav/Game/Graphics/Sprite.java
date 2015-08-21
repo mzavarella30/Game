@@ -14,6 +14,10 @@ public class Sprite {
     public static Sprite rock = new Sprite(16, 2, 0, SpriteSheet.tiles);
     public static Sprite brick = new Sprite(16, 0, 1, SpriteSheet.tiles);
     public static Sprite mud = new Sprite(16, 1, 1, SpriteSheet.tiles);
+    public static Sprite wall_ex = new Sprite(16, 100, 100, SpriteSheet.tiles);
+    public static Sprite wall_in = new Sprite(16, 100, 100, SpriteSheet.tiles);
+    public static Sprite wood = new Sprite(16, 100, 100, SpriteSheet.tiles);
+
     public static Sprite voidSprite = new Sprite(16, 0x28ADBB);
 
     public static Sprite player_u_0 = new Sprite(32, 2, 5, SpriteSheet.tiles); // up

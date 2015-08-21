@@ -1,10 +1,11 @@
 package com.Zav.Game.Level.Tile;
 
+
 import com.Zav.Game.Graphics.Screen;
 import com.Zav.Game.Graphics.Sprite;
 
-public class BrickTile extends Tile {
-    public BrickTile(Sprite sprite) {
+public class WoodenFloorTile extends Tile {
+    public WoodenFloorTile(Sprite sprite) {
         super(sprite);
     }
 

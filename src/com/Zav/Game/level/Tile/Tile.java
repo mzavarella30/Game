@@ -13,8 +13,11 @@ public class Tile {
     public static Tile grass = new GrassTile(Sprite.grass);
     public static Tile flower = new FlowerTile(Sprite.flower);
     public static Tile rock = new RockTile(Sprite.rock);
-    public static Tile brick = new BrickTile(Sprite.brick);
+    public static Tile brick = new BrickFloorTile(Sprite.brick);
     public static Tile mud = new MudTile(Sprite.mud);
+    public static Tile wall_ex = new MudTile(Sprite.wall_ex);
+    public static Tile wall_in = new MudTile(Sprite.wall_in);
+    public static Tile wood = new MudTile(Sprite.wood);
 
 
 

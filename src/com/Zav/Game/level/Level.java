@@ -18,6 +18,9 @@ public class Level {
     private static final int ROCK = 0xFF7F7F00;
     private static final int BRICK = 0xFF7F0000;
     private static final int MUD = 0xFF7A4D00;
+    private static final int WALL_EX = 0;
+    private static final int WALL_IN = 0;
+    private static final int WOOD = 0;
 
     public Level(int width, int height) {
         this.width = width;
@@ -65,6 +68,9 @@ public class Level {
         if (tiles[x + y * width] == ROCK) return Tile.rock;
         if (tiles[x + y * width] == BRICK) return Tile.brick;
         if (tiles[x + y * width] == MUD) return Tile.mud;
+        if (tiles[x + y * width] == WALL_EX) return Tile.wall_ex;
+        if (tiles[x + y * width] == WALL_IN) return Tile.wall_in;
+        if (tiles[x + y * width] == WOOD) return Tile.wood;
         return Tile.voidTile;
 
     }
