@@ -37,8 +37,9 @@ public class Game extends Canvas implements Runnable {
 
     private Screen screen;
 
-    // Game constructor
-    // All of this code runs whenever a new Game is created!
+    /**
+     * The constructor for the game
+     */
     public Game() {
         Dimension size = new Dimension(width * scale, height * scale);
         setPreferredSize(size);
@@ -52,12 +53,18 @@ public class Game extends Canvas implements Runnable {
         addKeyListener(key);
     }
 
+    /**
+     * This will actually start the game
+     */
     public synchronized void start() {
         running = true;
         thread = new Thread(this, "Display");
         thread.start();
     }
 
+    /**
+     * This is going to be the function to actually stop the game
+     */
     public synchronized void stop() {
         running = false;
         try {
@@ -67,6 +74,12 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
+    /**
+     * This will start and run the game in a loop
+     * Nothing happens until this method gets hit
+     *
+     * Running requires rendering and updating the screen
+     */
     public void run() {
         long lastTime = System.nanoTime();
         long timer = System.currentTimeMillis();
@@ -99,11 +112,18 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
+    /**
+     * This will check for input, move things around, check for win conditions, etc...
+     */
     public void update() {
         key.update();
         player.update();
     }
 
+    /**
+     * This method will draw everything
+     * If there is a rendering issue, it probably comes from here
+     */
     public void render() {
         BufferStrategy bs = getBufferStrategy();
         if (bs == null) {
